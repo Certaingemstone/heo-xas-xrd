@@ -610,12 +610,10 @@ class Struct2XAS:
             > radius (float):
                         radius for fdmnes calculation [Angstrom].
                         
-            > parent_path (str):
-                        Path to where the fdmfile will be created.
-                        if None will create a relative path automatically.
 
             > output_path (str):
                         Path to where the input files will be created.
+                        The FDMfile will be created one directory level up from this path.
                         if None will create a relative path automatically, the same as parent_path.
                         
             > output_name (str):
@@ -807,8 +805,6 @@ class Struct2XAS:
         replacements["method"] = method
         replacements["comment"] = comment
         replacements["occupancy"] = occupancy   
-        
-        replacements["jobname"] = name
 
         try:
             os.makedirs(parent_path, mode=0o755)
@@ -816,17 +812,21 @@ class Struct2XAS:
             pass
 
         # Write the input file.
-        filename = os.path.join(output_path, name + '.txt')
+        fdmpath = os.path.join(*os.path.split(output_path)[:-1])
+        output_path_relative_to_fdmpath = os.path.split(output_path)[-1]
+        replacements["jobname"] = output_path_relative_to_fdmpath + '/' + name
+        
+        filename = os.path.join(output_path, name + '_inp.txt')
         with open(filename, "w") as fp, open(template) as tp:
             inp = tp.read().format(**replacements)
             fp.write(inp)
 
-        # Write the fdmfile.txt.
-        with open(os.path.join(parent_path, "fdmfile.txt"), "a") as fp:
+        # Write the fdmfile.txt
+        with open(os.path.join(fdmpath, "fdmfile.txt"), "a") as fp:
             fp.write('\n')
-            fp.write(output_path + '/' + name + '.txt')
+            fp.write(output_path_relative_to_fdmpath + '/' + name + '_inp.txt')
 
-        logger.info(f"written FDMNES input fdmfile -> {parent_path + '/' + name + '.txt'}")
+        logger.info(f"written FDMNES input fdmfile -> {output_path_relative_to_fdmpath + '/' + name + '.txt'}")
         logger.info(f"written FDMNES main input -> {filename}")
 
     def make_input_feff(

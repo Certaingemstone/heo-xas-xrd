@@ -1,2 +1,2 @@
 1
-CuO_Tenorite/job_inp.txt
+CoO_Oh/COD1533087_inp.txt
