@@ -1,2 +1,2 @@
 1
-CoO_Oh/COD1533087_inp.txt
+outputs\test_27_Kedge

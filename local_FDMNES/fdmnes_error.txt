@@ -1,0 +1,28 @@
+ FDMNES program, Revision 15th of May 2023         
+   Date = 04 08 2023                              
+   Time = 20 h 25 mn 43 s                         
+
+ The absorbing atom is not inside the area of calculation !
+
+ When the calculation is performed on a cluster of atoms,
+ it can be due to the calculation radius which is too small.
+ So try again increasing the radius foth both the SCF and the Xanes.
+
+ Another solution is too check in the list of selected atoms below,
+ which takes into account the ponctual group symmetry, if the absorbing atom is in the list.
+
+ - if not, choose another atom in the list equivalent by symmetry of the space group, or of the ponctual group.
+ The equivalent atoms can be found under "Symsite" in the bav file.
+ Then you can use the keyword "Absorber", to choose the equivalent atom as absorber.
+
+ - if yes or if the previous method does not work, just change the order of the atoms, under "Crystal",
+   or "molecule", putting first the selected atom or at least before the one giving the problem.
+
+
+  ia   Z  it  igr ipr iap     posx      posy      posz   igrpt PtGrName Comp  Axe  Mag
+   1   8   2   27   3   1   0.00000   0.00000   0.00000   16      3       T    T    F
+   2  27   1   24   2   3   0.00000   1.65004   0.97494    1      1       T    F    F
+   3  27   1    1   1   5   0.00000   0.00000  -1.94194   16      3       T    T    F
+   4   8   2   41   3   7   1.27236   0.73460   2.07775    1      1       T    F    F
+   5   8   2   45   3   9  -1.27236   2.56548  -0.12788    1      1       T    F    F
+   6   8   2   38   3  14   1.27236   2.56548  -0.12788    1      1       T    F    F
