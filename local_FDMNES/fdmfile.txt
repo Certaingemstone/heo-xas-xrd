@@ -1,13 +1,2 @@
-12
-inputs\ZnCo_Co-Sp
-inputs\ZnCo_Zn-Sp
-inputs\CoCo_Co-Sp
-inputs\CuCo_Co-Sp
-inputs\CuCo_Cu-Sp
-inputs\Zn099Co201_Co-Sp
-inputs\Zn099Co201_Zn-Sp
-inputs\NiCo_Co-Sp
-inputs\NiCo_Ni-Sp
-inputs\Zn037Co263_Co-Sp
-inputs\Zn037Co263_Zn-Sp
-inputs\ZnO_Zn-Bl
+1
+inputs\CoCo_Co-Sp_27_Kedge.txt

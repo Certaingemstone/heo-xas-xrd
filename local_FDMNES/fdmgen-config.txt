@@ -1,8 +1,0 @@
-UNIX False
-INPUT_DIR inputs
-OUTPUT_DIR outputs
-RADIUS 3
-GREEN True
-SCF False
-QUADRUPOLE True
-DENSITY False

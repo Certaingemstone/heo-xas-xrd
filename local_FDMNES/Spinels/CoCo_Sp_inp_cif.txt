@@ -1,0 +1,24 @@
+! FDMNES input file by Jade
+
+header
+
+filout
+CoCo
+
+range
+-30.0 0.1 70.0 1.0 100 
+
+radius
+3
+
+quadrupole
+
+green
+
+Z_absorber
+27
+
+Cif_file
+Spinels/EntryWithCollCode24210
+
+end

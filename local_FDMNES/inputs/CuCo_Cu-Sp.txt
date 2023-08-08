@@ -19,7 +19,7 @@ SCF
 
 green
 
-absorber
+Z_absorber
 29
 
 Cif_file

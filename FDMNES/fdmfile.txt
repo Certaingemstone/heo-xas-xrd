@@ -1,2 +1,10 @@
-1
-outputs\test_27_Kedge
+9
+inputs\ZnCo_Co-Sp
+inputs\ZnCo_Zn-Sp
+inputs\CuCo_Co-Sp
+inputs\CuCo_Cu-Sp
+inputs\NiCo_Co-Sp
+inputs\NiCo_Ni-Sp
+inputs\Zn037Co263_Co-Sp
+inputs\Zn037Co263_Zn-Sp
+inputs\ZnO_Zn-Bl
