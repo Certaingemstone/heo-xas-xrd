@@ -26,6 +26,9 @@ Intended to take inconveniently large sets of normalized XAS data and cluster th
 ### `xas-pca-time-evolution`
 See `xas-pca-compare`, also includes ability to plot timeseries tracking evolution of XAS spectra through the space of XAS data. Will become useful once time-resolved XAS are available, in addition to steady-state references. Currently tested on time-resolved XANES data, with mediocre results.
 
+### `xas-pca-time-evolution-rock`
+See `xas-pca-time-evolution`. Proof-of-concept, uses full XAS spectra acquired at ROCK and compares to steady-state references in their low-dimensional embeddings.
+
 ### `xas-time-evolution-bm23`
 For plotting XAS over time and temperature, as well as spectrograms of change over time, and integrated change over time (difference spectra). Works with ESRF beamline HDF5 files.
 
