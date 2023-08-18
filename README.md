@@ -20,6 +20,9 @@ Client notebook to produce FDMNES input files from CIF structures, including vis
 ### `struct2xas`
 A version of bfoschiani's `struct2xas` I use. Currently has some issues with certain structures.
 
+### `xas-fdmnes-compare`
+Used to plot data and compare it with (linear combinations of) FDMNES simulations.
+
 ### `xas-pca-compare`
 Intended to take inconveniently large sets of normalized XAS data and cluster the spectra based on their principle component decompositions with no manual intervention.
 
