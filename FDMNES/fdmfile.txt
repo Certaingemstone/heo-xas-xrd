@@ -1,10 +1,5 @@
-9
-inputs\ZnCo_Co-Sp
-inputs\ZnCo_Zn-Sp
-inputs\CuCo_Co-Sp
-inputs\CuCo_Cu-Sp
-inputs\NiCo_Co-Sp
-inputs\NiCo_Ni-Sp
-inputs\Zn037Co263_Co-Sp
-inputs\Zn037Co263_Zn-Sp
-inputs\ZnO_Zn-Bl
+4
+inputs/CoO_Co-R_27.txt
+inputs/Zn085Co015O_Co-W_27.txt
+inputs/Zn085Co015O_Zn-W_30.txt
+inputs/Co3O4_Co-Sp_27.txt

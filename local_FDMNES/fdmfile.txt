@@ -1,2 +1,2 @@
 1
-inputs\CoCo_Co-Sp_27_Kedge.txt
+inputs\Co_Co-hcp_27.txt

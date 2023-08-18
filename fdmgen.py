@@ -5,7 +5,7 @@
 # Requires fdmgen-config.txt to be in the same directory as well.
 # Intended to be run on Windows machine targeting Windows (UNIX = False) or Linux (UNIX True) compute
 
-CONFIG_PARAMS = ('UNIX', 'INPUT_DIR', 'OUTPUT_DIR', 'RADIUS', 'GREEN', 'SCF', 'QUADRUPOLE', 'DENSITY')
+CONFIG_PARAMS = ('UNIX', 'INPUT_DIR', 'OUTPUT_DIR', 'RADIUS', 'GREEN', 'SCF', 'QUADRUPOLE', 'DENSITY', 'OXIDE')
 RANGE_DEFAULT = '-30.0 0.1 70.0 1.0 100' 
 
 import os
@@ -57,8 +57,8 @@ def write_fdminp(name, path_to_cif, Z_absorber, conf) -> str:
        and absorbing species, along with the settings
        defined in fdmgen-config.txt (conf)
        Returns the path that was written to."""
-    writepath = os.path.join(conf['INPUT_DIR'], '_'.join((name, str(Z_absorber), 'Kedge'))) + '.txt'
-    outpath = os.path.join(conf['OUTPUT_DIR'], '_'.join((name, str(Z_absorber), 'Kedge')))
+    writepath = os.path.join(conf['INPUT_DIR'], '_'.join((name, str(Z_absorber)))) + '.txt'
+    outpath = os.path.join(conf['OUTPUT_DIR'], '_'.join((name, str(Z_absorber))))
     if conf['UNIX'] == 'True':
         outpath = str(Path(outpath).as_posix())
     with open(writepath, 'w') as f:
@@ -73,6 +73,8 @@ def write_fdminp(name, path_to_cif, Z_absorber, conf) -> str:
             f.write('SCF\n\n')
         if conf['GREEN'] == 'True':
             f.write('green\n\n')
+        if conf['OXIDE'] == 'True':
+            f.write('Rpotmax\n15\n\nFull_atom\n\n')
         cif = str(Path(path_to_cif).as_posix()) if conf['UNIX'] == 'True' else path_to_cif
         f.writelines(['Z_absorber\n', str(Z_absorber),'\n\n','Cif_file\n', cif,'\n\n', 'end'])
     return writepath
@@ -121,7 +123,7 @@ if __name__ == '__main__':
         wrote_to = write_fdminp(nom, cifpath, Z_abs, conf)
         if conf['UNIX'] == 'True':
             wrote_to = str(Path(wrote_to).as_posix())
-        paths_to_inputs.append(wrote_to)
+        paths_to_inputs.append(wrote_to + '\n')
         if input("Add another file to calculation? (y/n) ") != 'y':
             adding_files = False
     
