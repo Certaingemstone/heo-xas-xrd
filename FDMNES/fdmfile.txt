@@ -1,5 +1,2 @@
-4
-inputs/CoO_Co-R_27.txt
-inputs/Zn085Co015O_Co-W_27.txt
-inputs/Zn085Co015O_Zn-W_30.txt
+1
 inputs/Co3O4_Co-Sp_27.txt
